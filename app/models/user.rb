@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  JAPANESE_REGEX = /\A[ぁ-んァ-ン一-龥]/
+  JAPANESE_REGEX = /\A[ぁ-んァ-ン一-龥々]+\z/
   FULL_WIDTH_REGEX = /\A[ァ-ヶー－]+\z/
   
   with_options presence: true do
