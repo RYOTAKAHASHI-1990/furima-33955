@@ -16,10 +16,10 @@
 
 ### Association
 
-* has_many :products  
+* has_many :items  
 * has_many :purchase_records
 
-## products table
+## items table
 
 | Column             | Type                | Options                              |
 |--------------------|---------------------|--------------------------------------|
@@ -43,7 +43,7 @@
 
 | Column             | Type                | Options                              |
 |--------------------|---------------------|--------------------------------------|
-| product            | references          | null: false, foreign_key: true       |
+| item               | references          | null: false, foreign_key: true       |
 | user               | references          | null: false, foreign_key: true       |
 
 
@@ -51,7 +51,7 @@
 
 * has_one :address
 * belongs_to :user
-* belongs_to :product
+* belongs_to :item
 
 
 ## addresses
