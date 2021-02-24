@@ -7,9 +7,16 @@ RSpec.describe OrderAddress, type: :model do
       @order_address = FactoryBot.build(:order_address, user_id: user.id)
     end
 
+  context '購入情報の保存に成功した時' do
     it 'すべての値が正しく入力されていれば保存できること' do
       expect(@order_address).to be_valid
     end
+    it 'building_nameは空でも登録できること' do
+      @order_address.building_name = nil
+      expect(@order_address).to be_valid
+    end
+  end
+  context '購入情報の保存に失敗した時' do
     it 'postal_codeが空だと保存できないこと' do
       @order_address.postal_code = nil
       @order_address.valid?
@@ -65,5 +72,6 @@ RSpec.describe OrderAddress, type: :model do
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("Phone number Input only number")
     end
+   end
   end
 end
