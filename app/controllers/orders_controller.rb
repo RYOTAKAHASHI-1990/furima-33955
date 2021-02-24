@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
-  before_action :set_action, expect: [:index, :create]
+  before_action :set_action, only: [:index, :create]
 
   def index
     @order_address = OrderAddress.new
