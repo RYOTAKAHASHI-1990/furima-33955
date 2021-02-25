@@ -6,7 +6,7 @@ class OrderAddress
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'Input correctly' }
     validates :city
     validates :address
-    validates :phone_number, format: { with: /\A\d{11}\z/, message: 'Input only number' }
+    validates :phone_number, format: { with: /\A\d{1,11}\z/, message: 'Input only number' }
     validates :user_id
     validates :item_id
     validates :prefecture_id, numericality: { other_than: 1 } 
